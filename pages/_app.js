@@ -1,5 +1,5 @@
 import { CartContextProvider } from '@/components/CartContext';
-import { createGlobalStyle } from 'styled-components';
+import { ServerStyleSheet, createGlobalStyle } from 'styled-components';
 import { SessionProvider } from "next-auth/react";
 
 
@@ -17,16 +17,19 @@ const GlobalStyles = createGlobalStyle`
     border-top: 1px solid #ccc;
    }
 `;
+ const sheet = new ServerStyleSheet();
 
 export default function App({ Component, pageProps: {session, ...pageProps} }) {
-  return(
+  const page =(
     <>
-      <GlobalStyles />
-      <SessionProvider session={session}>
-        <CartContextProvider>
-          <Component {...pageProps} />
-        </CartContextProvider>
-      </SessionProvider>
-    </>
-  ) 
+    <GlobalStyles />
+    <SessionProvider session={session}>
+      <CartContextProvider>
+        <Component {...pageProps} />
+      </CartContextProvider>
+    </SessionProvider>
+  </>
+  );
+  const styles = sheet.getStyleTags();
+  return {...page, styles};
 }
