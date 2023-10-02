@@ -59,7 +59,7 @@ export default function SearchPage() {
                           onChange={(ev)=> setSearchField(ev.target.value)}/>
             </InputWrapper>
             {!isLoading && seacrhField!=='' && products.length===0 && 
-             <h2>No products found for the query "{seacrhField}"</h2>}
+             <h2>No products found for the query &quot;{seacrhField}&quot; </h2>}
              {!isLoading && products.length>0 &&
              <ProductsGrid products={products} />}
              {isLoading &&

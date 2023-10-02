@@ -49,13 +49,13 @@ const ShowAllSquare = styled(Link)`
   border-radius: 10px;
 `;
 
-export default function({mainCategories, categoriesProducts, wishedProducts=[]}) {
+export default function CategoriesPage({mainCategories, categoriesProducts, wishedProducts=[]}) {
     return(
         <>
            <Header />
            <Center>
               {mainCategories.map(cat=> 
-                 (<CategoryWrapper>
+                 (<CategoryWrapper key={cat._id} > 
                     <CategoryTitle>
                         <h2>
                             {cat.name}
