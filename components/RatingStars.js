@@ -41,7 +41,7 @@ export default function RatingStars({stars=0, onChange=()=>{}, disable=false, si
   return(
     <RatingWrapper>
         {rate.map(star=>  
-        <div>{star}</div>
+        <div key={star}>{star}</div>
         )}
     </RatingWrapper>
   )  

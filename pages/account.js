@@ -166,7 +166,7 @@ export default function AccountPage() {
                     }
                     {isOrdersLoaded  &&
                     <div>{orders.map(order => (
-                        <SingleOrder {...order} />
+                        <SingleOrder key={order._id} {...order} />
                       ))}
                     </div>}
                   </>
