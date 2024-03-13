@@ -1,6 +1,7 @@
 import { CartContextProvider } from '@/components/CartContext';
 import { createGlobalStyle } from 'styled-components';
 import { SessionProvider } from "next-auth/react";
+import Spinner from '@/components/Spinner';
 
 
 const GlobalStyles = createGlobalStyle`
