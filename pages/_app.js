@@ -1,5 +1,5 @@
 import { CartContextProvider } from '@/components/CartContext';
-import { ServerStyleSheet, createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import { SessionProvider } from "next-auth/react";
 
 
@@ -17,19 +17,24 @@ const GlobalStyles = createGlobalStyle`
     border-top: 1px solid #ccc;
    }
 `;
- const sheet = new ServerStyleSheet();
 
-export default function App({ Component, pageProps: {session, ...pageProps} }) {
-  const page =(
+ export default function App({ Component, pageProps: {session, ...pageProps} }) {
+  const [initialLoad, setIntialLoad] = useState(false);
+  useEffect(() => {
+    setIntialLoad(true)
+  },[])
+  return(
     <>
-    <GlobalStyles />
-    <SessionProvider session={session}>
-      <CartContextProvider>
-        <Component {...pageProps} />
-      </CartContextProvider>
-    </SessionProvider>
-  </>
-  );
-  const styles = sheet.getStyleTags();
-  return {...page, styles};
+      {
+        initialLoad ? <>
+        <GlobalStyles />
+      <SessionProvider session={session}>
+        <CartContextProvider>
+          <Component {...pageProps} />
+        </CartContextProvider>
+      </SessionProvider></> 
+      : <div style={{display:"flex", justifyContent:"center", alignItems:"center", width:"100%", height:"100vh"}}><Spinner/></div>
+      }
+    </>
+  ) 
 }
