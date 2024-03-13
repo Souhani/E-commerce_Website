@@ -82,26 +82,27 @@ export default function Featured({product}) {
     return (
         <Bg>
             <Center>
+               {product && 
                 <ColumnsWrapper>
-                    <Column>
-                      <StyledContentRevealWrapper origin='left' delay={0}>
-                        <Title>{product.title}</Title>
-                        <Desc>{product.description}</Desc>
-                        <ButtonsWrapper>
-                            <ButtonLink href={"/product/"+ product._id} white={1} outline={1} >Read more</ButtonLink>
-                            <FlyingButton _id={product._id}  src={product.images?.[0]} white={1} >
-                                 <CartIcon />
-                                 Add to cart
-                            </FlyingButton>
-                        </ButtonsWrapper>
-                      </StyledContentRevealWrapper>
-                    </Column>
-                    <Column>
-                      <StyledImageRevealWrapper delay={0}>
-                        <img className='mainImage' src={product.images?.[0]}  alt="" />
-                      </StyledImageRevealWrapper>
-                    </Column>
-                </ColumnsWrapper>
+                <Column>
+                  <StyledContentRevealWrapper origin='left' delay={0}>
+                    <Title>{product.title}</Title>
+                    <Desc>{product.description}</Desc>
+                    <ButtonsWrapper>
+                        <ButtonLink href={"/product/"+ product._id} white={1} outline={1} >Read more</ButtonLink>
+                        <FlyingButton _id={product._id}  src={product.images?.[0]} white={1} >
+                             <CartIcon />
+                             Add to cart
+                        </FlyingButton>
+                    </ButtonsWrapper>
+                  </StyledContentRevealWrapper>
+                </Column>
+                <Column>
+                  <StyledImageRevealWrapper delay={0}>
+                    <img className='mainImage' src={product.images?.[0]}  alt="" />
+                  </StyledImageRevealWrapper>
+                </Column>
+            </ColumnsWrapper>}
             </Center>
         </Bg>
     )
