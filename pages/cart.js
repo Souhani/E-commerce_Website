@@ -153,6 +153,9 @@ export default function Cart() {
       .then(response => setShippingFee(response.data.value))
     },[])
     if(successedPayment) {
+      if(window !== undefined) {
+        window.localStorage.removeItem('cart')
+      }
       return(
         <>
           <Header />
