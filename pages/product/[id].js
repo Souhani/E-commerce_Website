@@ -6,7 +6,6 @@ import Header from "@/components/Header";
 import ProductImages from "@/components/ProductImages";
 import ProductReviews from "@/components/ProductReviews";
 import Title from "@/components/Title";
-import WhiteBox from "@/components/WhiteBox";
 import CartIcon from "@/components/icons/CartIcon";
 import { mongooseConnect } from "@/lib/mongoose";
 import { Product } from "@/models/Product";
@@ -23,6 +22,13 @@ margin: 40px 0;
     grid-template-columns: 0.6fr 1.4fr;
 }
 
+`;
+
+const WhiteBox = styled.div`
+  background-color: #fff;
+  border-radius: 10px;
+  height: 370px;
+  padding: 30px;
 `;
 
 const Price = styled.span`
