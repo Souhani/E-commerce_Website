@@ -18,16 +18,16 @@ export default async function handler(req, res) {
              userEmail: session.user.email,
              product:product,
             })
-            res.json('removed')
+           return res.json('removed')
          }else {
             await WishedProduct.create({
              userEmail: session.user.email,
              product: product
             });
-            res.json('created')
+            return res.json('created')
          }
       };
-      res.json('not loged in')
+     return res.json('not loged in')
    };
    if(req.method === 'GET') {
       if(session?.user){
@@ -35,7 +35,7 @@ export default async function handler(req, res) {
          return res.json(wishedProductsDoc)
 
       };
-      res.json('not loged in')
+      return res.json('not loged in')
    }
    
 }
