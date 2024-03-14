@@ -8,10 +8,11 @@ import { authOptions } from "./api/auth/[...nextauth]";
 import { WishedProduct } from "@/models/WishedProduct";
 import { Setting } from "@/models/Setting";
 import Footer from "@/components/Footer";
+import { styled } from "styled-components";
 
 
 
-const FooterWrraper = styled.p`
+const loveWrraper = styled.p`
 color: red;
 text-align: center;
 padding: 2px;
@@ -28,7 +29,7 @@ export default function HomePage({featuredProduct, newProducts, wishedNewProduct
       <Header />
       <Featured product={featuredProduct} />
       <NewProducts products={newProducts} wishedProducts={wishedNewProducts} />
-      <p>Made with ❤️ by Souhani</p>
+      <loveWrraper>Made with ❤️ by Souhani</loveWrraper>
       <Footer />
     </div>
   )
