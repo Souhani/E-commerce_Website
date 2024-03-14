@@ -154,7 +154,8 @@ export default function Cart() {
     },[])
     if(successedPayment) {
       if(window !== undefined) {
-        window.localStorage.removeItem('cart')
+        window.localStorage.removeItem('cart');
+        clearCart();
       }
       return(
         <>
