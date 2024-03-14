@@ -32,7 +32,7 @@ export default async function handler(req, res) {
    if(req.method === 'GET') {
       if(session?.user){
          const wishedProductsDoc = await WishedProduct.find({ userEmail: session.user.email }).populate('product');
-         res.json(wishedProductsDoc)
+         return res.json(wishedProductsDoc)
 
       };
       res.json('not loged in')
