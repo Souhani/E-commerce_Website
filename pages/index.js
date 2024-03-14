@@ -9,6 +9,18 @@ import { WishedProduct } from "@/models/WishedProduct";
 import { Setting } from "@/models/Setting";
 import Footer from "@/components/Footer";
 
+
+
+const FooterWrraper = styled.p`
+color: red;
+text-align: center;
+padding: 2px;
+left: 0;
+position: absolute
+bottom: 0;
+width: 100%;
+margin-top: 50px;
+`;
 export default function HomePage({featuredProduct, newProducts, wishedNewProducts}) {
   return (
     <div>
@@ -16,6 +28,7 @@ export default function HomePage({featuredProduct, newProducts, wishedNewProduct
       <Header />
       <Featured product={featuredProduct} />
       <NewProducts products={newProducts} wishedProducts={wishedNewProducts} />
+      <p>Made with ❤️ by Souhani</p>
       <Footer />
     </div>
   )

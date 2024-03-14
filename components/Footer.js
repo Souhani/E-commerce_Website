@@ -16,7 +16,7 @@ margin-top: 50px;
 const Footer = () => {
   return (
     <FooterWrraper >
-      <p>Made with ❤️ by Souhani</p>
+      <p></p>
     </FooterWrraper>
   );
 };
