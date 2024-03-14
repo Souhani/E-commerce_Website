@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 
 
 const FooterWrraper = styled.footer`
-color: #fff;
+color: red;
 text-align: center;
 padding: 2px;
 left: 0;
@@ -16,7 +16,7 @@ margin-top: 50px;
 const Footer = () => {
   return (
     <FooterWrraper >
-      <p></p>
+      <p>Made with ❤️ by Souhani</p>
     </FooterWrraper>
   );
 };
