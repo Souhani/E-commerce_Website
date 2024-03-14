@@ -10,6 +10,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { authOptions } from "./api/auth/[...nextauth]";
 import { WishedProduct } from "@/models/WishedProduct";
+import Footer from "@/components/Footer";
 
 const CategoryGrid = styled.div`
  display: grid;
@@ -81,6 +82,7 @@ export default function CategoriesPage({mainCategories, categoriesProducts, wish
                   </CategoryWrapper>)
                 )}
            </Center>
+           <Footer />
         </>
     )
 };

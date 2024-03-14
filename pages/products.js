@@ -7,6 +7,7 @@ import { Product } from "@/models/Product";
 import { WishedProduct } from "@/models/WishedProduct";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]";
+import Footer from "@/components/Footer";
 
 
 export default function ProductsPgae({products, wishedProducts}) {
@@ -17,6 +18,7 @@ export default function ProductsPgae({products, wishedProducts}) {
         <Title>All products</Title>
         <ProductsGrid products={products} wishedProducts={wishedProducts} />
        </Center>
+       <Footer />
      </>
     )
 };

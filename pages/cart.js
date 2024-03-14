@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
 import { CartContext } from "@/components/CartContext";
 import Center from "@/components/Center";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Input from "@/components/Input";
 import Spinner from "@/components/Spinner";
@@ -138,12 +139,12 @@ export default function Cart() {
         setIsLoaded(false)
         axios.get('api/account')
       .then(res => {
-        setName(res.data.name);
-        setEmail(res.data.email);
-        setCity(res.data.city);
-        setCountry(res.data.country);
-        setPostalCode(res.data.postalCode);
-        setStreetAddress(res.data.streetAddress);
+        setName(res.data?.name);
+        setEmail(res.data?.email);
+        setCity(res.data?.city);
+        setCountry(res.data?.country);
+        setPostalCode(res.data?.postalCode);
+        setStreetAddress(res.data?.streetAddress);
         setIsLoaded(true)
       })
       }
@@ -278,6 +279,7 @@ export default function Cart() {
 
                 </ColumnsWrapper>
             </Center>
+            <Footer />
         </div>
     )
 }

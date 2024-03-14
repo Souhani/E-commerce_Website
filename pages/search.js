@@ -7,6 +7,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import  debounce from 'lodash.debounce';
 import Spinner from "@/components/Spinner";
+import Footer from "@/components/Footer";
 
 const SearchInput = styled.input`
   ${InputStyle}
@@ -66,6 +67,7 @@ export default function SearchPage() {
              <Spinner fullWdith={1} />}
             
           </Center>
+          <Footer />
         </>
     )
 };
