@@ -11,16 +11,12 @@ import Footer from "@/components/Footer";
 import { styled } from "styled-components";
 
 
-
-const loveWrraper = styled.p`
+const LoveWrraper = styled.p`
 color: red;
 text-align: center;
 padding: 2px;
-left: 0;
-position: absolute
-bottom: 0;
 width: 100%;
-margin-top: 50px;
+margin: 20px;
 `;
 export default function HomePage({featuredProduct, newProducts, wishedNewProducts}) {
   return (
@@ -29,8 +25,8 @@ export default function HomePage({featuredProduct, newProducts, wishedNewProduct
       <Header />
       <Featured product={featuredProduct} />
       <NewProducts products={newProducts} wishedProducts={wishedNewProducts} />
-      <loveWrraper>Made with ❤️ by Souhani</loveWrraper>
       <Footer />
+      <LoveWrraper>Made with ❤️ by Souhani</LoveWrraper>
     </div>
   )
 }
